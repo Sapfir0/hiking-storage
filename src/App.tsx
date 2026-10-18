@@ -1,5 +1,5 @@
 import './App.css';
-import { List, Tab, Tabs } from '@mui/material';
+import { Grid, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
 import { ActivityCard } from './activity-card.tsx';
 import { trekkingData } from './data/data.ts';
@@ -14,13 +14,13 @@ function App() {
       <Tabs value={currentTab} onChange={(e, value) => {setCurrentTab(value);}} aria-label="basic tabs example">
         {Object.keys(trekkingData).map(key => <Tab value={key} label={key}/>)}
       </Tabs>
-      <List
-        sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}
-        component="nav"
-      >
+      <Grid container spacing={5}>
         {trekkingData[currentTab].map((activity, i) =>
-          <ActivityCard key={activity.name + i} activity={activity}/>)}
-      </List>
+          <Grid>
+            <ActivityCard key={activity.name + i} activity={activity}/>
+          </Grid>
+        )}
+      </Grid>
     </>
   );
 }

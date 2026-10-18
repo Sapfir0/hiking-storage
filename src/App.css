@@ -3,11 +3,11 @@
 
 body {
     max-width: 1400px;
-
-    font-family:
-            Inter,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }

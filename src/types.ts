@@ -4,8 +4,8 @@ export type TDay = {
   descent: number
   minElevation: number
   maxElevation: number
-  image: '',
-  description: ''
+  image?: string,
+  description?: string
   link?: string
 }
 
@@ -15,7 +15,8 @@ export type TActivity = {
   country: string,
   accent: number,
   wikiLoc?: string
-  mountainSystem: string
+  mountainSystem?: string
+  region?: string
   image: string
   description: string
 }
