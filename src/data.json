@@ -1,0 +1,37 @@
+{
+  "trekking": [
+    {
+      "name": "Arhyz",
+      "distance": "1222",
+      "accent": "333",
+      "description": "Поход",
+      "country": "Russia",
+      "wikiLoc": "link",
+      "image": "src/assets/ayulu.jpg"
+    },
+    {
+      "name": "Hibiny",
+      "distance": "108.42",
+      "country": "Russia",
+      "wikiLoc": "https://www.wikiloc.com/hiking-trails/hibini-6-days-krug-po-khibinam-249967556"
+    },
+    {
+      "name": "West caucasus",
+      "distance": "108.42",
+      "country": "Russia",
+      "wikiLoc": "https://www.wikiloc.com/hiking-trails/hibini-6-days-krug-po-khibinam-249967556"
+    }],
+  "hiking": [{
+    "name": "PR-CV 78 | Circle around Xàtiva",
+    "distance": "15.67",
+    "country": "Spain",
+    "wikiLoc": "https://www.wikiloc.com/hiking-trails/pr-cv-78-circle-around-xativa-291886819"
+  },
+    {
+      "name": "Hallasan mountain - Seongpanak to Gwaneumsa",
+      "distance": "19.51",
+      "country": "Spain",
+      "wikiLoc": "https://www.wikiloc.com/hiking-trails/pr-cv-78-circle-around-xativa-291886819"
+    }
+  ]
+}
