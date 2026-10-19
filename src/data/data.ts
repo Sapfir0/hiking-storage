@@ -5,6 +5,8 @@ import { westCaucasus } from './west-caucasus.ts';
 import type { TActivityStructure } from '../types.ts';
 import cv78 from './assets/cv78.jpeg';
 import hallasan from './assets/hallasan.jpeg';
+import kapeaasalmi from './assets/kapeaasalmi.jpg';
+import laos from './assets/laos.jpeg';
 
 export const trekkingData: TActivityStructure = {
   'trekking': [
@@ -32,6 +34,24 @@ export const trekkingData: TActivityStructure = {
       'wikiLoc': 'https://es.wikiloc.com/rutas-carrera-por-montana/run-inwangsan-and-bugaksan-mountains-263841529',
       description: '',
       image: hallasan
+    },
+    {
+      'name': 'От Капеасалми до Кузнечного по берегу Ладожского озера',
+      'distance': 25.8,
+      accent: 95,
+      'country': 'Russia',
+      'wikiLoc': 'https://www.wikiloc.com/hiking-trails/kapeasalmi-to-kuznechnoe-len-oblast-251923715',
+      description: '',
+      image: kapeaasalmi
+    },
+    {
+      'name': 'Two viewpoints in Vang Vieng | Silver Cliff, Pha Nguen',
+      'distance': 13.62,
+      accent: 536,
+      'country': 'Laos',
+      'wikiLoc': 'https://www.wikiloc.com/hiking-trails/two-viewpoints-in-vang-vieng-251679232',
+      description: '',
+      image: laos
     }
   ]
 };
