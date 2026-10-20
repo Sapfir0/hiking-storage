@@ -19,6 +19,7 @@ export type TActivity = {
   region?: string
   image: string
   description: string
+  link?: string
 }
 
 export type TTrekking = {days: TDay[]} & TActivity
@@ -27,4 +28,5 @@ export type THiking = {} & TActivity
 export type TActivityStructure = {
   trekking: TTrekking[]
   hiking: THiking[]
+  trails: THiking[]
 }

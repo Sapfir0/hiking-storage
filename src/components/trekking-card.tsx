@@ -63,7 +63,8 @@ export function TrekkingCard({ activity }: TActivityCardProps) {
 
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <a href={activity.link}>Learn More</a>
+
       </CardActions>
     </Card>
   );

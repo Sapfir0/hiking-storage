@@ -1,5 +1,5 @@
-import arhyz from './assets/arhyz.jpeg';
-import type { TDay, TTrekking } from '../types.ts';
+import arhyz from './images/arhyz.jpeg';
+import type { TDay, TTrekking } from '../../types.ts';
 
 // 42.55 + 38.2
 // 2831 + 2364
@@ -95,5 +95,6 @@ export const arhyzTrip: TTrekking = {
   'country': 'Russia',
   'mountainSystem': 'Caucasus, Arhyz',
   'image': arhyz,
-  'days': perDays
+  'days': perDays,
+  link: '/arhyz'
 };

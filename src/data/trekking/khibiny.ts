@@ -1,5 +1,5 @@
-import type { TDay, TTrekking } from '../types.ts';
-import khibiny from './assets/khibiny.jpeg';
+import type { TDay, TTrekking } from '../../types.ts';
+import khibiny from './images/khibiny.jpeg';
 
 const days: TDay[] = [
   {
