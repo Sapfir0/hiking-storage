@@ -1,5 +1,5 @@
 import image from './images/west-caucasus.jpeg';
-import type { TDay, TTrekking } from '../../types.ts';
+import { Country, type TDay, type TTrekking } from '../../types.ts';
 
 // 42.55 + 38.2
 // 2831 + 2364
@@ -58,13 +58,13 @@ const days: TDay[] = [
 ];
 
 export const westCaucasus: TTrekking = {
-  'name': 'West Caucasus',
-  'distance': days.reduce((fullDistance, day) => fullDistance + day.distance, 0),
-  'accent': days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
-  'description': 'Поход',
-  'country': 'Russia',
-  'mountainSystem': 'Caucasus',
-  'image': image,
-  'days': days,
+  name: 'West Caucasus',
+  distance: days.reduce((fullDistance, day) => fullDistance + day.distance, 0),
+  accent: days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
+  description: 'Поход',
+  country: Country.Russia,
+  mountainSystem: 'Caucasus',
+  image: image,
+  days: days,
   wikiLoc: 'https://www.wikiloc.com/hiking-trails/through-mountains-to-sea-failed-western-caucasus-november-2024-3-days-251925660'
 };

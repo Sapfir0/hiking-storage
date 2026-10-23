@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Divider, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Divider, Typography } from '@mui/material';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import RouteIcon from '@mui/icons-material/Route';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -25,16 +25,21 @@ function Param({ title, icon, value }: {title: string, value: string | number, i
   </Box>;
 }
 
-export function TrekkingCard({ activity }: TActivityCardProps) {
+export function ActivityCard({ activity }: TActivityCardProps) {
   return (
-    <Card sx={{ borderRadius: '10px', boxShadow: ' -8px -4px 20px -2px rgba(0, 0, 0, 0.5);' }}>
+    <Card sx={{
+      borderRadius: '10px',
+      boxShadow: ' -8px -4px 20px -2px rgba(0, 0, 0, 0.5);',
+      width: '360px',
+      height: '100%'
+    }}>
       <CardMedia
         component="img"
         height="250"
         image={activity.image}
       />
-      <CardContent>
-        <Typography variant="h5" component="div">
+      <CardContent sx={{ 'justifyContent': 'space-between' }}>
+        <Typography variant="h5" component="a" href={activity.wikiLoc}>
           {activity.name}
         </Typography>
         <div style={{ display: 'flex' }}>
@@ -42,7 +47,6 @@ export function TrekkingCard({ activity }: TActivityCardProps) {
           <Typography
             sx={{ color: 'text.secondary', mb: 1.5 }}>{activity.mountainSystem}, {activity.country}</Typography>
         </div>
-
 
         <Box
           sx={{
@@ -54,18 +58,13 @@ export function TrekkingCard({ activity }: TActivityCardProps) {
           <Param title="Distance" value={`${Math.round(activity.distance)} km`} icon={<TerrainIcon color="disabled"/>}/>
           <Divider orientation="vertical" flexItem/>
           <Param title="Accent" value={`${activity.accent} m`} icon={<RouteIcon color="disabled"/>}/>
-          <Divider orientation="vertical" flexItem/>
-          <Param title="Days" value={activity.days?.length + 1} icon={<CalendarTodayIcon color="disabled"/>}/>
+          {activity.days && <>
+            <Divider orientation="vertical" flexItem/>
+            <Param title="Days" value={activity.days?.length + 1} icon={<CalendarTodayIcon color="disabled"/>}/>
+          </>}
         </Box>
-
-
         <Typography>{activity.description}</Typography>
-
       </CardContent>
-      <CardActions>
-        <a href={activity.link}>Learn More</a>
-
-      </CardActions>
     </Card>
   );
 }

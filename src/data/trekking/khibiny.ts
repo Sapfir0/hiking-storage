@@ -1,4 +1,4 @@
-import type { TDay, TTrekking } from '../../types.ts';
+import { Country, type TDay, type TTrekking } from '../../types.ts';
 import khibiny from './images/khibiny.jpeg';
 
 const days: TDay[] = [
@@ -63,13 +63,13 @@ const days: TDay[] = [
 // 108.42,
 // 333,
 export const khibinyTrip: TTrekking = {
-  'name': 'Russian arctic adventure',
-  'distance': days.reduce((fullDistance, day) => fullDistance + day.distance, 0),
-  'accent': days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
-  'description': 'Поход',
-  'mountainSystem': 'Khibiny',
-  'country': 'Russia',
-  'wikiLoc': 'https://www.wikiloc.com/hiking-trails/hibini-6-days-krug-po-khibinam-249967556',
-  'image': khibiny,
+  name: 'Russian arctic adventure',
+  distance: days.reduce((fullDistance, day) => fullDistance + day.distance, 0),
+  accent: days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
+  description: 'Поход',
+  mountainSystem: 'Khibiny',
+  country: Country.Russia,
+  wikiLoc: 'https://www.wikiloc.com/hiking-trails/hibini-6-days-krug-po-khibinam-249967556',
+  image: khibiny,
   days
 };

@@ -12,6 +12,5 @@ export const trekkingData: TActivityStructure = {
     khibinyTrip,
     westCaucasus
   ],
-  trails: trails,
-  hiking: hiking
-};
+  hiking: [...hiking, ...trails]
+} as const;

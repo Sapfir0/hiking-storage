@@ -1,3 +1,19 @@
+export enum EuropeanCountries {
+  Spain = 'Spain',
+  Germany = 'Germany'
+}
+
+export enum AsianCountries {
+  SouthKorea = 'South Korea',
+  Laos = 'Laos'
+}
+
+export enum Russia {
+  Russia = 'Russia',
+}
+
+export const Country = { ...EuropeanCountries, ...AsianCountries, ...Russia };
+
 export type TDay = {
   distance: number,
   accent: number,
@@ -12,7 +28,7 @@ export type TDay = {
 export type TActivity = {
   name: string,
   distance: number,
-  country: string,
+  country: typeof Country[keyof typeof Country],
   accent: number,
   wikiLoc?: string
   mountainSystem?: string
@@ -28,5 +44,5 @@ export type THiking = {} & TActivity
 export type TActivityStructure = {
   trekking: TTrekking[]
   hiking: THiking[]
-  trails: THiking[]
+  // trails: THiking[]
 }

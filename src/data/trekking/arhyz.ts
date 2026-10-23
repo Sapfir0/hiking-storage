@@ -1,5 +1,5 @@
 import arhyz from './images/arhyz.jpeg';
-import type { TDay, TTrekking } from '../../types.ts';
+import { Country, type TDay, type TTrekking } from '../../types.ts';
 
 // 42.55 + 38.2
 // 2831 + 2364
@@ -88,13 +88,13 @@ const perDays: TDay[] = [
 ];
 
 export const arhyzTrip: TTrekking = {
-  'name': 'Arhyz passages',
-  'distance': perDays.reduce((fullDistance, day) => fullDistance + day.distance, 0),
-  'accent': perDays.reduce((fullAccent, day) => fullAccent + day.accent, 0),
-  'description': 'Поход',
-  'country': 'Russia',
-  'mountainSystem': 'Caucasus, Arhyz',
-  'image': arhyz,
-  'days': perDays,
+  name: 'Arhyz passages',
+  distance: perDays.reduce((fullDistance, day) => fullDistance + day.distance, 0),
+  accent: perDays.reduce((fullAccent, day) => fullAccent + day.accent, 0),
+  description: 'Поход',
+  country: Country.Russia,
+  mountainSystem: 'Caucasus, Arhyz',
+  image: arhyz,
+  days: perDays,
   link: '/arhyz'
 };
