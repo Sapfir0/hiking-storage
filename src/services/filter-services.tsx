@@ -1,12 +1,19 @@
-import { EuropeanCountries, type TActivityStructure } from '../types.ts';
-
-export const REGIONS = ['Europe', 'Asia', 'Russia'];
-export const TAGS = ['High_mountains'];
+import { AsianCountries, EuropeanCountries, Russia, type TFilter } from '../types.ts';
 
 const EUCountries = Object.values(EuropeanCountries);
+const AsiaCountries = Object.values(AsianCountries);
 
-export function Filter(data: TActivityStructure, regionFilter?: typeof REGIONS[number]) {
-  if (regionFilter === 'Europe') {
-    return data.hiking.filter((hike) => EUCountries.includes(hike.country as EuropeanCountries));
+export const REGIONS: TFilter[] = [
+  {
+    label: 'Europe',
+    filter: (hike) => EUCountries.includes(hike.country as EuropeanCountries)
+  },
+  {
+    label: 'Asia',
+    filter: (hike) => AsiaCountries.includes(hike.country as AsianCountries)
+  }, {
+    label: 'Russia',
+    filter: (hike) => hike.country === Russia.Russia
   }
-}
+];
+export const TAGS = ['High_mountains'];

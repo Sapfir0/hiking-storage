@@ -3,23 +3,29 @@ import { useState } from 'react';
 import { REGIONS, TAGS } from './services/filter-services.tsx';
 import { TagSelector } from './components/type-selector.tsx';
 import { ActivityCard } from './components/activity-card.tsx';
-import type { TActivityStructure, TTrekking } from './types.ts';
+import type { TActivityStructure, TFilter, TTrekking } from './types.ts';
 import { trekkingData } from './data';
 
 import './App.css';
 
 function App() {
-  const [currentTab, setCurrentTab] = useState<keyof TActivityStructure>('trekking');
+  const [currentTab, setCurrentTab] = useState<keyof TActivityStructure>('hiking');
+  const [filtersList, setFiltersList] = useState<TFilter[]>([REGIONS[0]]);
+
+  const data = trekkingData[currentTab].filter((hike) =>
+    filtersList.some((condition) =>
+      condition.filter(hike)
+    ));
 
   return (
     <>
-      <TagSelector tags={REGIONS} multiple={false}/>
-      <TagSelector tags={TAGS} multiple={true}/>
+      <TagSelector tags={REGIONS} setFilters={setFiltersList} multiple={false}/>
+      {/*<TagSelector tags={TAGS} multiple={true}/>*/}
       <Tabs value={currentTab} onChange={(_, value) => {setCurrentTab(value);}}>
         {Object.keys(trekkingData).map(key => <Tab value={key} label={key}/>)}
       </Tabs>
       <Grid container spacing={3}>
-        {trekkingData[currentTab].map((activity, i) =>
+        {data.map((activity, i) =>
           <Grid sx={{}}>
             <ActivityCard key={activity.name + i} activity={activity as TTrekking}/>
           </Grid>

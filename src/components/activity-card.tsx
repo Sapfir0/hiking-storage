@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Divider, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import RouteIcon from '@mui/icons-material/Route';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -39,10 +39,9 @@ export function ActivityCard({ activity }: TActivityCardProps) {
         image={activity.image}
       />
       <CardContent sx={{ 'justifyContent': 'space-between' }}>
-        <Typography variant="h5" component="a" href={activity.wikiLoc}>
-          {activity.name}
-        </Typography>
-        <div style={{ display: 'flex' }}>
+        <Link href={activity.wikiLoc}>{activity.name}</Link>
+
+        <div style={{ display: 'flex', marginTop: '10px' }}>
           <PlaceIcon color="disabled"/>
           <Typography
             sx={{ color: 'text.secondary', mb: 1.5 }}>{activity.mountainSystem}, {activity.country}</Typography>

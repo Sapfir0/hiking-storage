@@ -14,6 +14,12 @@ export enum Russia {
 
 export const Country = { ...EuropeanCountries, ...AsianCountries, ...Russia };
 
+export type TFilter = {
+  label: string;
+  filter: (data: TActivity) => boolean
+  defaultSelected?: boolean
+}
+
 export type TDay = {
   distance: number,
   accent: number,
