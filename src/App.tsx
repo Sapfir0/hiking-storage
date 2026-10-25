@@ -1,6 +1,6 @@
 import { Grid, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
-import { REGIONS, TAGS } from './services/filter-services.tsx';
+import { REGIONS } from './services/filter-services.tsx';
 import { TagSelector } from './components/type-selector.tsx';
 import { ActivityCard } from './components/activity-card.tsx';
 import type { TActivityStructure, TFilter, TTrekking } from './types.ts';
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <TagSelector tags={REGIONS} setFilters={setFiltersList} multiple={false}/>
+      <TagSelector tags={REGIONS} filters={filtersList} setFilters={setFiltersList} multiple={false}/>
       {/*<TagSelector tags={TAGS} multiple={true}/>*/}
       <Tabs value={currentTab} onChange={(_, value) => {setCurrentTab(value);}}>
         {Object.keys(trekkingData).map(key => <Tab value={key} label={key}/>)}

@@ -6,7 +6,7 @@ import { MainRouter } from './main-router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/hiking-storage">
       <div className="main">
         <MainRouter/>
       </div>
