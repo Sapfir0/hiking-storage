@@ -21,12 +21,12 @@ function App() {
     <>
       <TagSelector tags={REGIONS} filters={filtersList} setFilters={setFiltersList} multiple={false}/>
       {/*<TagSelector tags={TAGS} multiple={true}/>*/}
-      <Tabs value={currentTab} onChange={(_, value) => {setCurrentTab(value);}}>
+      <Tabs value={currentTab} orientation="horizontal" onChange={(_, value) => {setCurrentTab(value);}}>
         {Object.keys(trekkingData).map(key => <Tab value={key} label={key}/>)}
       </Tabs>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} columns={{ xs: 4, sm: 8, md: 12 }}>
         {data.map((activity, i) =>
-          <Grid sx={{}}>
+          <Grid size={{ xs: 4, sm: 8, md: 4 }}>
             <ActivityCard key={activity.name + i} activity={activity as TTrekking}/>
           </Grid>
         )}

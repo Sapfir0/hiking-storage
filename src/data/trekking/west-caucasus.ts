@@ -63,6 +63,7 @@ export const westCaucasus: TTrekking = {
   accent: days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
   description: 'Поход',
   country: Country.Russia,
+  district: 'Krasnodar Krai',
   mountainSystem: 'Caucasus',
   image: image,
   days: days,

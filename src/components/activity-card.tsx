@@ -1,13 +1,15 @@
-import { Box, Card, CardContent, CardMedia, Divider, Link, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Chip, Divider, Link, Typography } from '@mui/material';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import RouteIcon from '@mui/icons-material/Route';
 import PlaceIcon from '@mui/icons-material/Place';
 import React from 'react';
-import type { TTrekking } from '../types.ts';
+import type { TActivity } from '../types.ts';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import FestivalIcon from '@mui/icons-material/Festival';
 
-type TActivityCardProps = {
-  activity: TTrekking
+type TActivityCardProps<T extends TActivity> = {
+  activity: T
 }
 
 function Param({ title, icon, value }: {title: string, value: string | number, icon: React.ReactElement}) {
@@ -25,14 +27,21 @@ function Param({ title, icon, value }: {title: string, value: string | number, i
   </Box>;
 }
 
-export function ActivityCard({ activity }: TActivityCardProps) {
+const chipStyles = { position: 'absolute', marginLeft: '5px', marginTop: '5px' };
+
+export function ActivityCard<T extends TActivity>({ activity }: TActivityCardProps<T>) {
   return (
     <Card sx={{
       borderRadius: '10px',
       boxShadow: ' -8px -4px 20px -2px rgba(0, 0, 0, 0.5);',
-      width: '360px',
       height: '100%'
     }}>
+      {activity.withTent &&
+       <Chip sx={chipStyles} icon={<FestivalIcon/>} label="With tent"
+             color="success"/>}
+      {activity.run &&
+       <Chip sx={chipStyles} icon={<DirectionsRunIcon/>} label="Run"
+             color="primary"/>}
       <CardMedia
         component="img"
         height="250"
@@ -44,7 +53,11 @@ export function ActivityCard({ activity }: TActivityCardProps) {
         <div style={{ display: 'flex', marginTop: '10px' }}>
           <PlaceIcon color="disabled"/>
           <Typography
-            sx={{ color: 'text.secondary', mb: 1.5 }}>{activity.mountainSystem}, {activity.country}</Typography>
+            sx={{ color: 'text.secondary', mb: 1.5 }}>{[
+            activity.mountainSystem,
+            activity.district,
+            activity.country
+          ].filter(Boolean).join(', ')}</Typography>
         </div>
 
         <Box
@@ -57,10 +70,10 @@ export function ActivityCard({ activity }: TActivityCardProps) {
           <Param title="Distance" value={`${Math.round(activity.distance)} km`} icon={<TerrainIcon color="disabled"/>}/>
           <Divider orientation="vertical" flexItem/>
           <Param title="Accent" value={`${activity.accent} m`} icon={<RouteIcon color="disabled"/>}/>
-          {activity.days && <>
+          {'days' in activity && Array.isArray(activity.days) ? <>
             <Divider orientation="vertical" flexItem/>
             <Param title="Days" value={activity.days?.length + 1} icon={<CalendarTodayIcon color="disabled"/>}/>
-          </>}
+          </> : undefined}
         </Box>
         <Typography>{activity.description}</Typography>
       </CardContent>

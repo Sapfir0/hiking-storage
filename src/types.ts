@@ -38,10 +38,13 @@ export type TActivity = {
   accent: number,
   wikiLoc?: string
   mountainSystem?: string
+  district: string
   region?: string
   image: string
   description: string
   link?: string
+  run?: boolean,
+  withTent?: boolean
 }
 
 export type TTrekking = {days: TDay[]} & TActivity
