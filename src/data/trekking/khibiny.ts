@@ -68,6 +68,7 @@ export const khibinyTrip: TTrekking = {
   accent: days.reduce((fullAccent, day) => fullAccent + day.accent, 0),
   description: 'Поход',
   mountainSystem: 'Khibiny',
+  district: 'Murmansk Oblast',
   country: Country.Russia,
   wikiLoc: 'https://www.wikiloc.com/hiking-trails/hibini-6-days-krug-po-khibinam-249967556',
   image: khibiny,

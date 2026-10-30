@@ -4,3 +4,4 @@ node_modules
 .yarn*
 .DS_Store
 dist
+yarn.lock

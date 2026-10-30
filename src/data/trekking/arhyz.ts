@@ -93,6 +93,7 @@ export const arhyzTrip: TTrekking = {
   accent: perDays.reduce((fullAccent, day) => fullAccent + day.accent, 0),
   description: 'Поход',
   country: Country.Russia,
+  district: 'Kabardino-Balkaria',
   mountainSystem: 'Caucasus, Arhyz',
   image: arhyz,
   days: perDays,
