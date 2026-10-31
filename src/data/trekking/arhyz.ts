@@ -97,5 +97,5 @@ export const arhyzTrip: TTrekking = {
   mountainSystem: 'Caucasus, Arhyz',
   image: arhyz,
   days: perDays,
-  link: '/arhyz'
+  link: 'arhyz'
 };

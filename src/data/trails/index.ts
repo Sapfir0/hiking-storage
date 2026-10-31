@@ -16,7 +16,7 @@ export const trails = [
     image: inwangsan
   },
   {
-    name: 'Кружок вокруг озера Щучье',
+    name: 'Around Haukijärvi lake',
     distance: 21.75,
     accent: 130,
     country: Country.Russia,
@@ -26,7 +26,7 @@ export const trails = [
     image: shchuche
   },
   {
-    name: 'Из Сестрорецка в Зеленогорск',
+    name: 'From Siestarjoki to Zelenogorsk',
     distance: 24.02,
     accent: 43,
     country: Country.Russia,
@@ -36,7 +36,7 @@ export const trails = [
     image: sestoretsk
   },
   {
-    name: 'Kandalaksha Trail road',
+    name: 'Kandalaksha Trail',
     distance: 14.96,
     accent: 561,
     country: Country.Russia,

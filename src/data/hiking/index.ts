@@ -3,11 +3,10 @@ import { Country, type THiking } from '../../types.ts';
 import cv78 from './images/cv78.jpeg';
 import hallasan from './images/hallasan.jpeg';
 import laos from './images/laos.jpeg';
-import montesa from './images/montesa.jpg';
+import montesa from './images/montesa.jpeg';
 import jerica from './images/jerica.jpg';
 
 export const hiking: THiking[] = [
-  ...russianHikes,
   {
     name: 'PR-CV 78 | Circle around Xàtiva',
     distance: 15.67,
@@ -57,5 +56,6 @@ export const hiking: THiking[] = [
     wikiLoc: 'https://www.wikiloc.com/hiking-trails/two-viewpoints-in-vang-vieng-251679232',
     description: '',
     image: laos
-  }
+  },
+  ...russianHikes
 ] as const;

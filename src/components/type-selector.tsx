@@ -21,7 +21,7 @@ export function TagSelector({ multiple, tags, setFilters, filters }: {
   return <ToggleButtonGroup
     value={selectedTags}
     onChange={handleFormat}
-    exclusive={multiple}
+    exclusive={!multiple}
     aria-label="text alignment"
   >
     {tags.map(tag => <ToggleButton value={tag}>

@@ -7,6 +7,10 @@ export function MainRouter() {
 
   return <Routes>
     <Route path="/" element={<App/>}/>
-    <Route path={trekkingData.trekking[0].link} element={<Arhyz/>}/>
+
+    {trekkingData.trekking.map((trek => <Route path={trek.link} element={<Arhyz data={trek}/>}/>
+    ))}
   </Routes>;
 }
+
+

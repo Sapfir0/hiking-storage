@@ -2,10 +2,11 @@ import petaarvi from './images/petaarvi.jpg';
 import orekhovo from './images/orekhovo.jpg';
 import kapeaasalmi from './images/kapeaasalmi.jpg';
 import { Country, type THiking } from '../../types.ts';
+import yastrebinoe from './images/yastrebinoe.jpg';
 
 export const russianHikes: THiking[] = [
   {
-    name: 'Кружок через поляну ПКТ',
+    name: 'Orekhovo at winter',
     distance: 22.82,
     accent: 219,
     country: Country.Russia,
@@ -15,7 +16,7 @@ export const russianHikes: THiking[] = [
     image: orekhovo
   },
   {
-    name: 'Петяярви и озера Берестяное и Дубовое',
+    name: 'Lakes near Petäjärvi',
     distance: 23.21,
     accent: 219,
     country: Country.Russia,
@@ -25,7 +26,7 @@ export const russianHikes: THiking[] = [
     image: petaarvi,
     withTent: true
   }, {
-    name: 'От Капеасалми до Кузнечного по берегу Ладожского озера',
+    name: 'From Kapeasalmi to Kuznechnoe by Ladoga lake shore',
     distance: 25.8,
     accent: 95,
     country: Country.Russia,
@@ -33,6 +34,17 @@ export const russianHikes: THiking[] = [
     wikiLoc: 'https://www.wikiloc.com/hiking-trails/kapeasalmi-to-kuznechnoe-len-oblast-251923715',
     description: '',
     image: kapeaasalmi,
+    withTent: true
+  },
+  {
+    name: 'Yastrebinoe lake',
+    distance: 47,
+    accent: 395,
+    country: Country.Russia,
+    district: 'Leningrad Oblast',
+    wikiLoc: 'https://www.wikiloc.com/hiking-trails/yastrebinoe-lake-hike-249988191',
+    description: '',
+    image: yastrebinoe,
     withTent: true
   }
 ];

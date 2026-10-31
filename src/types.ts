@@ -55,3 +55,4 @@ export type TActivityStructure = {
   hiking: THiking[]
   // trails: THiking[]
 }
+

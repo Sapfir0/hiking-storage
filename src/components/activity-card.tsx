@@ -2,7 +2,7 @@ import { Box, Card, CardContent, CardMedia, Chip, Divider, Link, Typography } fr
 import TerrainIcon from '@mui/icons-material/Terrain';
 import RouteIcon from '@mui/icons-material/Route';
 import PlaceIcon from '@mui/icons-material/Place';
-import React from 'react';
+import { ActivityParam } from '../components/activity-paramater.tsx';
 import type { TActivity } from '../types.ts';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
@@ -10,21 +10,6 @@ import FestivalIcon from '@mui/icons-material/Festival';
 
 type TActivityCardProps<T extends TActivity> = {
   activity: T
-}
-
-function Param({ title, icon, value }: {title: string, value: string | number, icon: React.ReactElement}) {
-  return <Box
-    sx={{
-      display: 'inline-flex',
-      gap: '5px'
-    }}
-  >
-    {icon}
-    <div>
-      <Typography>{title}</Typography>
-      <Typography>{value}</Typography>
-    </div>
-  </Box>;
 }
 
 const chipStyles = { position: 'absolute', marginLeft: '5px', marginTop: '5px' };
@@ -48,7 +33,7 @@ export function ActivityCard<T extends TActivity>({ activity }: TActivityCardPro
         image={activity.image}
       />
       <CardContent sx={{ 'justifyContent': 'space-between' }}>
-        <Link href={activity.wikiLoc}>{activity.name}</Link>
+        <Link href={activity.link ?? activity.wikiLoc}>{activity.name}</Link>
 
         <div style={{ display: 'flex', marginTop: '10px' }}>
           <PlaceIcon color="disabled"/>
@@ -67,15 +52,15 @@ export function ActivityCard<T extends TActivity>({ activity }: TActivityCardPro
             gap: '20px'
           }}
         >
-          <Param title="Distance" value={`${Math.round(activity.distance)} km`} icon={<TerrainIcon color="disabled"/>}/>
+          <ActivityParam title="Distance" value={`${Math.round(activity.distance)} km`}
+                         icon={<TerrainIcon color="disabled"/>}/>
           <Divider orientation="vertical" flexItem/>
-          <Param title="Accent" value={`${activity.accent} m`} icon={<RouteIcon color="disabled"/>}/>
+          <ActivityParam title="Accent" value={`${activity.accent} m`} icon={<RouteIcon color="disabled"/>}/>
           {'days' in activity && Array.isArray(activity.days) ? <>
             <Divider orientation="vertical" flexItem/>
-            <Param title="Days" value={activity.days?.length + 1} icon={<CalendarTodayIcon color="disabled"/>}/>
+            <ActivityParam title="Days" value={activity.days?.length + 1} icon={<CalendarTodayIcon color="disabled"/>}/>
           </> : undefined}
         </Box>
-        <Typography>{activity.description}</Typography>
       </CardContent>
     </Card>
   );
